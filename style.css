@@ -1,0 +1,19 @@
+body {
+	background: URL('bg.jpg');
+}
+h1 {
+	font-size: 48px;
+	color: yellow;
+	text-align: center;
+}
+
+#result {
+	font-family: 'Arvo', serif;
+	color: green;
+	text-align: center;
+}
+
+#death {
+	font-family: 'Nosifer', cursive;
+	color: red;
+}
