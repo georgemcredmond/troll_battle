@@ -1,42 +1,78 @@
+/* Script for the troll.html document
+   Author: George 		Date: 7/10/19
+   Filename: script.js */
+   
 "use strict";
 
+document.getElementById("button").addEventListener("click", trollBattle);
+
+
 function trollBattle() {
-	var action = window.prompt("You're walking through a forest, minding your own business, and suddenly a troll appears! Do you FIGHT the troll, BRIBE the troll or RUN for your life?").toUpperCase();
+	// Initial prompt question for the user stored in a variable
+	var action = window.prompt("You're walking through a forest, minding your business, and a troll appears! \nDo you FIGHT the troll? \nDo you BRIBE the troll? \nOr RUN for your life?").toUpperCase();
 	
-	//switch statement to handle initial action
-	switch(action) {
+	// switch statement to handle the initial player choice
+	switch(action){
 		case "FIGHT":
-			var strong = window.prompt("Wow, how brave! Are you strong? (YES or NO)").toUpperCase();
-			var smart = window.prompt("Are you smart? (YES or NO)").toUpperCase();
-			if(strong === "YES" || smart === "YES") {
-				document.getElementById("result").innerHTML="You only need to be either stronger or smarter to beat a troll.</br> You win, good job!";
+			var strong = window.prompt("Wow, how brave! \nAre you strong? (YES or NO)").toUpperCase();
+			var smart = window.prompt("Are you a cunning warrior? (YES or NO)").toUpperCase();
+			
+			// If statement that analyzes the user responses
+			if(strong === "YES" || smart === "YES"){
+				document.getElementById("result").innerHTML = "You can either be stronger or smarter than a troll to survive. </br> You live another day!";
+				
+				document.getElementById("death").innerHTML = "";
+				document.getElementById("win").play();
 			} else {
-				document.getElementById("death").innerHTML="You're not strong or smart? </br> I guess you shouldn't have fought a troll.</br> You have died.";
+				document.getElementById("death").innerHTML = "You're not strong or smart? </br> Why did you fight a troll? </br> You have died.";
+				
+				document.getElementById("result").innerHTML = "";
+				document.getElementById("die").play();
 			}
-		break;
-		
+			break;
 		case "BRIBE":
-			var money = window.prompt("You have to pay the troll toll, do you have any money? (YES or NO)").toUpperCase();
-			var dollars = window.prompt("This troll only accepts troll bucks. Is your money in troll dollars? (YES or NO)").toUpperCase();
-			if (money === "YES" && dollars === "YES") {
-				document.getElementById("result").innerHTML = "Great job.</br> You have paid the troll and lived to tell about it!";
+			var money = window.prompt("You have to pay the troll toll! \nDo you have money? (YES or NO)").toUpperCase();
+			
+			if(money === "YES"){
+				var dollars = window.prompt("How much money do you have? \n(Please enter a number value)");
+				dollars = parseInt(dollars);
+				if(dollars >= 50){
+					document.getElementById("result").innerHTML = "Great job!</br>You have paid the troll and live to tell about it!";
+					document.getElementById("win").play();
+					
+					document.getElementById("death").innerHTML = "";
+				}else {
+					document.getElementById("death").innerHTML = "A troll needs more than that to let you live!</br>Smashy smashy, you're dead!";
+					
+					document.getElementById("result").innerHTML = "";
+					document.getElementById("die").play();
+				}
 			} else {
-				document.getElementById("death").innerHTML = "You fool, you need troll dollars to pay off a troll!</br> You have died!";
+				document.getElementById("death").innerHTML = "What were you going to bribe with? Your looks? </br>The troll is not impressed. You are dead";
+				
+				document.getElementById("result").innerHTML = "";
+				document.getElementById("die").play();
 			}
-		break;
-		
+			break;
 		case "RUN":
 			var speed = window.prompt("Are you fast? (YES or NO)").toUpperCase();
-			if (speed === "YES") {
-				document.getElementById("result").innerHTML = "Your speed allowed you to get away and live another day.</br> But can you still live with yourself?";
+			if(speed === "YES"){
+				document.getElementById("result").innerHTML = "Your speed has allowed you to survive. </br>But can you live with your cowardice?";
+				
+				document.getElementById("death").innerHTML = "";
+				document.getElementById("win").play();
 			} else {
-				document.getElementById("death").innerHTML = "You coward, if you choose to run, make sure you're at least faster than a troll. </br> You have died!";
+				document.getElementById("death").innerHTML = "You coward, if you choose to run, at least be faster than the troll. </br> You have died!";
+				
+				document.getElementById("result").innerHTML = "";
+				document.getElementById("die").play();
+				
 			}
-		break;
-		
-		default: window.alert("Please type FIGHT, BRIBE or RUN to play the game");	
-		trollBattle();
-	} // end of switch statement	
-}
+			break;
+		default: 
+			window.alert("Please type FIGHT, BRIBE or RUN to play");
+			trollBattle();
+	} // end of switch statement
+	
 
-document.getElementById("button").addEventListener("click", trollBattle, false);
+}

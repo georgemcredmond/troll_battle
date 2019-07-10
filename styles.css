@@ -1,52 +1,56 @@
+/* Stylesheet for the troll.html document
+   Author: George Date: 7/10/19
+   Filename: styles.css */
+
 body {
-	background: url('fantasy.jpg');
+	background-image: url('troll.jpg');
 }
-
+   
 h1 {
-	font-size: 56px;
-	text-align: center;
 	font-family: 'Eater', cursive;
-	color: #F5F5DC;
-	text-shadow: 0px 0px 4px red;
+	color: white;
+	text-align: center;
+	font-size: 76px;
+	text-shadow: 1px 2px 3px red;
 }
 
-#button {
+div#button {
+	font-size: 30px;
 	background-color: yellow;
-	font-size: 24px;
-	border-radius: 40px;
-	color: red;
-	font-weight: bold;
-	width: 340px;
-	margin: 2px auto;
+	width: 280px;
 	text-align: center;
-	padding: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 40px;
+	padding: 10px 0px;
+	transition: all 2s;
 }
 
-#result {
-	font-family: 'Philosopher', sans-serif;
-	color: green;
+div#button:hover {
+	background-color: red;
+	color: white;
+	width: 400px;
+	font-size: 34px;
+}
+
+h2#result {
+	font-family: 'Barriecito', cursive;
+	color: greenyellow;
+	font-size: 60px;
 	text-align: center;
-	font-size: 4em;
 	text-shadow: 2px 2px 3px white;
 }
 
-#death {
+h2#death {
 	font-family: 'Freckle Face', cursive;
 	color: red;
-	animation: neon1 0.5s ease-in-out infinite alternate;
 	text-align: center;
-	font-size: 4em;
+	font-size: 60px;
+	text-shadow: 2px 2px 3px white, 4px 4px 4px #ff4d4d;
 }
 
-/* Keyframe Animation */
-@-webkit-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-  }
-}
+
+
 
 
 
