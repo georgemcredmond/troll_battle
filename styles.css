@@ -1,23 +1,24 @@
-/* Stylesheet for the troll.html document
-   Author: George Date: 7/10/19
-   Filename: styles.css */
+/* Stylesheet for Troll Game document
+   George McRedmond 1-8-2020
+*/
 
 body {
 	background-image: url('troll.jpg');
 }
-   
+
 h1 {
 	font-family: 'Eater', cursive;
 	color: white;
 	text-align: center;
-	font-size: 76px;
-	text-shadow: 1px 2px 3px red;
+	font-size: 78px;
+	text-shadow: 2px 2px 3px red;
 }
 
 div#button {
+	font-family: 'Permanent Marker', cursive;
 	font-size: 30px;
 	background-color: yellow;
-	width: 280px;
+	width: 300px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -28,25 +29,10 @@ div#button {
 
 div#button:hover {
 	background-color: red;
-	color: white;
-	width: 400px;
+	color: yellow;
 	font-size: 34px;
-}
-
-h2#result {
-	font-family: 'Barriecito', cursive;
-	color: greenyellow;
-	font-size: 60px;
-	text-align: center;
-	text-shadow: 2px 2px 3px white;
-}
-
-h2#death {
-	font-family: 'Freckle Face', cursive;
-	color: red;
-	text-align: center;
-	font-size: 60px;
-	text-shadow: 2px 2px 3px white, 4px 4px 4px #ff4d4d;
+	width: 400px;
+	cursor: url(fight.png) 12 18, move;
 }
 
 
